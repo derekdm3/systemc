@@ -1,7 +1,7 @@
 CXX := g++
 CXXFLAGS := -g -I../inc -I$(SYSTEMC)/include
 LIBS := -lsystemc
-LIBPATH := -L$(SYSTEMC)/lib-linux64 -L$(SYSTEMC)/lib-linux
+LIBPATH := -L$(SYSTEMC)/lib-$(SYSTEMC_ARCH)
 
 full_adder_test_EXE := full_adder_test
 ripple_adder_test_EXE := ripple_adder_test
