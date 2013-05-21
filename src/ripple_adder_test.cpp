@@ -59,6 +59,6 @@ int sc_main(int argc, char* argv[])
     m0.m_s3(t_s3);
     m0.m_c4(t_c4);
     // simulate for max 1000 ns
-    sc_start(1000, SC_NS);
+    sc_start(1, SC_SEC);
     return 0;
 }
