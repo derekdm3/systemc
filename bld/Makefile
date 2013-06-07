@@ -23,6 +23,12 @@ seq_det_test.x : $(seq_det_test_OBJS)
 tri_state_test_OBJS := tri_state_test.o tri_state.o
 tri_state_test.x : $(tri_state_test_OBJS)
 	$(CXX) -o $@ $(tri_state_test_OBJS) $(LIBPATH) $(LIBS)
+simple_fifo_test_OBJS := simple_fifo_test.o simple_fifo.o
+simple_fifo_test.x : $(simple_fifo_test_OBJS)
+	$(CXX) -o $@ $(simple_fifo_test_OBJS) $(LIBPATH) $(LIBS)
+simple_perf_test_OBJS := simple_perf_test.o simple_perf.o
+simple_perf_test.x : $(simple_perf_test_OBJS)
+	$(CXX) -o $@ $(simple_perf_test_OBJS) $(LIBPATH) $(LIBS)
 
 clean :
 	@$(RM) -f *.x; $(RM) -f *.o; $(RM) -f *.vcd; $(RM) -f *.log
