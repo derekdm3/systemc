@@ -29,6 +29,9 @@ simple_fifo_test.x : $(simple_fifo_test_OBJS)
 simple_perf_test_OBJS := simple_perf_test.o simple_perf.o
 simple_perf_test.x : $(simple_perf_test_OBJS)
 	$(CXX) -o $@ $(simple_perf_test_OBJS) $(LIBPATH) $(LIBS)
+simple_bus_test_OBJS := simple_bus_test.o simple_bus.o
+simple_bus_test.x : $(simple_bus_test_OBJS)
+	$(CXX) -o $@ $(simple_bus_test_OBJS) $(LIBPATH) $(LIBS)
 
 clean :
 	@$(RM) -f *.x; $(RM) -f *.o; $(RM) -f *.vcd; $(RM) -f *.log

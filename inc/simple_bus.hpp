@@ -76,6 +76,7 @@ class simple_bus_non_blocking_if
 class simple_bus_blocking_if
    : public virtual sc_core::sc_interface
 {
+   public:
       virtual simple_bus_status burst_read(unsigned int unique_priority,
                                            int* data,
                                            unsigned int start_address,
@@ -108,10 +109,10 @@ class simple_bus_slave_if
 };
 
 class simple_bus
-   : public simple_buf_direct_if
+   : public simple_bus_direct_if
    , public simple_bus_non_blocking_if
    , public simple_bus_blocking_if
-   , public sc_module
+   , public sc_core::sc_module
 {
 private:
    bool m_verbose;
@@ -130,7 +131,7 @@ public:
    sc_core::sc_port<simple_bus_arbiter_if> arbiter_port;
    sc_core::sc_port<simple_bus_slave_if, 0> slave_port;
    
-   simple_bus(sc_module_name name, bool verbose = false);
+   simple_bus(sc_core::sc_module_name name, bool verbose = false);
    void main_action();
    bool direct_read(int* data, unsigned int address);
    bool direct_write(int* data, unsigned int address);
